@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>API - Документация</title>
+    <meta name="description" content="">
+    <meta name="author" content="ticlekiwi">
+
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/hightlightjs-dark.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" media="all">
+</head>
+
+<body>
+<div class="left-menu">
+    <div class="content-logo">
+        <div class="logo">
+            <img src="images/logo.png" height="32" />
+            <span>API Документация</span>
+        </div>
+    </div>
+    <div class="mobile-menu-closer"></div>
+    <div class="content-menu">
+        <div class="content-infos">
+            <div class="info"><b>Версия:</b> 1.0.0</div>
+        </div>
+        <ul>
+            <!-- Кандидат -->
+            <li class="main">
+                <a style="text-decoration: none">Кандидат</a>
+            </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="signup-kd-data.html">Регистрация. Список</a>
+                </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="signup-kd.html">Регистрация</a>
+                </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="change-type.html">Изменить тип консультации</a>
+                </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="change-status.html">Не ищу консультанта</a>
+                </li>
+
+            <!-- Консультант -->
+            <li class="main">
+                <a style="text-decoration: none">Консультант</a>
+            </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="signup-kk-data.html">Регистрация. Список</a>
+                </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="signup-kk.html">Регистрация</a>
+                </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="signup-kk.html">VIP анкета</a>
+                </li>
+
+
+            <!-- Общее -->
+            <li class="main">
+                <a style="text-decoration: none">Общее</a>
+            </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="index.html">Авторизация</a>
+                </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="reset.html">Забыли пароль - выслать</a>
+                </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="checkcode.html">Забыли пароль - проверить</a>
+                </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="delete-profile.html">Удалить профиль</a>
+                </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="cabinet.html">Кабинет</a>
+                </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="support.html">Поддержка - новое обращение</a>
+                </li>
+                <li class="scroll-to-link">
+                    <a class="ml" href="support.html">Поддержка - новое сообщение</a>
+                </li>
+        </ul>
+
+    </div>
+</div>
+
+<div class="content-page">
+    <div class="content">
+        <div class="overflow-hidden content-section" id="content-get-characters">
+            <h2>VIP анкета - получение информации про анкету</h2>
+                <p>
+                    Точка входа: <code class="higlighted break-word">api/v1/cabinet/support/message</code>
+                </p>
+            <br>
+            <pre style="margin-top: -160px"><code class="json">
+
+Запроса без параметров
+
+
+
+Успешный ответ - код 200:
+
+{
+    "data": {
+        "id": 2,
+        "user_id": 1,
+        "is_q_1": 1,
+        "is_q_2": 1,
+        "is_q_3": 1,
+        "is_q_4": 1,
+        "is_q_5": 1,
+        "is_q_6": 1,
+        "is_q_7": 1,
+        "is_q_8": 1,
+        "is_q_9": 1,
+        "is_q_10": 1,
+        "is_q_11": 1,
+        "is_q_12": 0,
+        "is_q_13": 1,
+        "is_q_14": 1,
+        "is_q_15": 1,
+        "is_q_16": 1,
+        "is_q_17": 1,
+        "is_q_18": 1,
+        "is_q_19": 1,
+        "is_women_package": 0,
+        "c_1_top": 10,
+        "c_1_mid": 0,
+        "c_1_line": 3,
+        "c_1_spec": 14,
+        "c_2_comp": 12,
+        "c_3_hrd": 0,
+        "c_4_top": 1,
+        "c_4_mid": 1,
+        "c_4_line": 1,
+        "c_4_spec": 1,
+        "c_5_comp": 0,
+        "c_6_hrd": 3,
+        "link_1": "vk.com",
+        "link_2": null,
+        "link_3": null,
+        "created_at": "2021-12-22T14:44:13.000000Z",
+        "updated_at": "2021-12-22T14:44:13.000000Z",
+        "docs": []
+    }
+}
+
+Неудачный ответ - код 404:
+
+{
+    "errors": {
+        "user" : "Пользователь не найден."
+    }
+}
+                </code></pre>
+            <h4>POST запрос</h4>
+            <table class="central-overflow-x">
+                <thead>
+                    <tr>
+                        <th>Параметр</th>
+                        <th>Тип</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>API - Документация</title>
+    <meta name="description" content="">
+    <meta name="author" content="ticlekiwi">
+
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/hightlightjs-dark.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" media="all">
+</head>
+
+<body>
+<div class="left-menu">
+    <div class="content-logo">
+        <div class="logo">
+            <img src="images/logo.png" height="32" />
+            <span>API Документация</span>
+        </div>
+    </div>
+    <div class="mobile-menu-closer"></div>
+    <div class="content-menu">
+        <div class="content-infos">
+            <div class="info"><b>Версия:</b> 1.0.0</div>
+        </div>
+        <ul>
+            <!-- Кандидат -->
+            <li class="main">
+                <a style="text-decoration: none">Кандидат</a>
+            </li>
+            <li class="scroll-to-link">
+                <a class="ml" href="signup-kd-data.html">Регистрация. Список</a>
+            </li>
+            <li class="scroll-to-link">
+                <a class="ml" href="signup-kd.html">Регистрация</a>
+            </li>
+            <li class="scroll-to-link">
+                <a class="ml" href="change-type.html">Изменить тип консультации</a>
+            </li>
+
+            <!-- Консультант -->
+            <li class="main">
+                <a style="text-decoration: none">Консультант</a>
+            </li>
+            <li class="scroll-to-link">
+                <a class="ml" href="signup-kk-data.html">Регистрация. Список</a>
+            </li>
+            <li class="scroll-to-link">
+                <a class="ml" href="signup-kk.html">Регистрация</a>
+            </li>
+
+            <!-- Общее -->
+            <li class="main">
+                <a style="text-decoration: none">Общее</a>
+            </li>
+            <li class="scroll-to-link">
+                <a class="ml" href="index.html">Авторизация</a>
+            </li>
+            <li class="scroll-to-link">
+                <a class="ml" href="reset.html">Забыли пароль - выслать</a>
+            </li>
+            <li class="scroll-to-link">
+                <a class="ml" href="checkcode.html">Забыли пароль - проверить</a>
+            </li>
+            <li class="scroll-to-link">
+                <a class="ml" href="delete-profile.html">Удалить профиль</a>
+            </li>
+            <li class="scroll-to-link">
+                <a class="ml" href="cabinet.html">Кабинет</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="content-page">
+    <div class="content">
+        <div class="overflow-hidden content-section" id="content-get-characters">
+            <h2>Регистрация - Консультант</h2>
+                <p>
+                    Точка входа: <code class="higlighted break-word">api/v1/auth/signup</code>
+                </p>
+            <br>
+            <pre style="margin-top: -160px"><code class="json">
+Пример запроса:
+
+{
+    "role" : 2,
+    "first_name" : "Ivan",
+    "last_name" : "Ivanov",
+    "phone" : "+79999999999",
+    "email" : "ivanjob@gmail.com",
+    "birth_day" : "1999-09-27",
+    "citizenship" : "Russian",
+    "work_place" : "OOO BIK",
+    "is_incognito" : 0,
+    "work_mode" : 0,
+    "prof_achievements" : "Nothing achv",
+    "regions_list" : [
+        {
+            "region_id" : 1
+        },
+        {
+            "region_id" : 2
+        }
+    ],
+    "industries_list" : [
+        {
+            "industry_id" : 1
+        },
+        {
+            "industry_id" : 2
+        }
+    ],
+    "edu_list" : [
+        {
+            "level" : 1,
+            "institution" : "KTITS",
+            "faculty" : "Programming in comp systems",
+            "specialization" : "Programmer",
+            "edu_years_from" : 2015,
+            "edu_years_to" : 2021
+        },
+        {
+            "level" : 1,
+            "institution" : "KTITS",
+            "faculty" : "Programming in comp systems",
+            "specialization" : "Programmer",
+            "edu_years_from" : 2015,
+            "edu_years_to" : 2021
+        }
+    ],
+    "exp_list" : [
+        {
+            "organization" : "Produc",
+            "exp_mode" : 0,
+            "post" : "programmer",
+            "duties" : "coding",
+            "exp_years_from" : 2020,
+            "exp_years_to" : 2021,
+            "now" : 1
+        },
+        {
+            "organization" : "Produc",
+            "exp_mode" : 0,
+            "post" : "programmer",
+            "duties" : "coding",
+            "exp_years_from" : 2020,
+            "exp_years_to" : 2021,
+            "now" : 1
+        }
+    ],
+    "password" : "i46596i",
+    "password_confirmation" : "i46596i"
+}
+
+Успешный ответ - код 200:
+
+{
+    "success": "Пользователь успешно зарегистрирован",
+    "data": {
+        "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvdjFcL2F1dGhcL3NpZ251cCIsImlhdCI6MTYzOTkxMzEzNSwiZXhwIjoyNDE3NTEzMTM1LCJuYmYiOjE2Mzk5MTMxMzUsImp0aSI6InoxcTVINjZVSlBxTno5b2oiLCJzdWIiOjEwLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.I2Ss6kUZ1MWJ2MgPQJIwtMuKmLS1QDpqihvMS2RpW0Y"
+    }
+}
+
+Неудачный ответ - код 422:
+
+{
+    "errors": {
+        "email": [
+            "Пользователь с таким email уже существует"
+        ]
+    }
+}
+
+Неудачный ответ - код 422:
+
+{
+    "errors": {
+        "img": [
+            "Произошла ошибка при загрузке изображения"
+        ]
+    }
+}
+
+Неудачный ответ - код 500:
+
+{
+    "errors": {
+        "server": [
+            "Произошла ошибка при регистрации"
+        ]
+    }
+}
+                </code></pre>
+            <h4>POST запрос</h4>
+            <table class="central-overflow-x">
+                <thead>
+                    <tr>
+                        <th>Параметр</th>
+                        <th>Тип</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>role</td>
+                        <td>integer</td>
+                        <td>Роль: 1 - Кандидат, 2 - Консультант</td>
+                    </tr>
+
+                    <tr>
+                        <td>first_name</td>
+                        <td>string</td>
+                        <td>Имя</td>
+                    </tr>
+
+                    <tr>
+                        <td>last_name</td>
+                        <td>string</td>
+                        <td>Фамилия</td>
+                    </tr>
+
+                    <tr>
+                        <td>phone</td>
+                        <td>string</td>
+                        <td>Номер телефона</td>
+                    </tr>
+
+                    <tr>
+                        <td>email</td>
+                        <td>string</td>
+                        <td>Почта</td>
+                    </tr>
+
+                    <tr>
+                        <td>birth_day</td>
+                        <td>string</td>
+                        <td>Дата рождения</td>
+                    </tr>
+
+                    <tr>
+                        <td>citizenship</td>
+                        <td>string</td>
+                        <td>Гражданство</td>
+                    </tr>
+
+                    <tr>
+                        <td>work_place</td>
+                        <td>string</td>
+                        <td>Место работы</td>
+                    </tr>
+
+                    <tr>
+                        <td>is_incognito</td>
+                        <td>integer</td>
+                        <td>Хочу работать инкогнито</td>
+                    </tr>
+
+                    <tr>
+                        <td>work_mode</td>
+                        <td>integer</td>
+                        <td>Режим работы (Самозанятый, ИП ....)</td>
+                    </tr>
+
+                    <tr>
+                        <td>prof_achievements</td>
+                        <td>string</td>
+                        <td>Профессиональные достижения</td>
+                    </tr>
+
+                    <tr>
+                        <td>regions_list</td>
+                        <td>array</td>
+                        <td>Список: Регион, где ваш нетворкинг наиболее...</td>
+                    </tr>
+
+                    <tr>
+                        <td>region_id</td>
+                        <td>integer</td>
+                        <td>ID региона</td>
+                    </tr>
+
+                    <tr>
+                        <td>industries_list</td>
+                        <td>array</td>
+                        <td>Список: Отрасль, где ваши связи проявляются ...</td>
+                    </tr>
+
+                    <tr>
+                        <td>industry_id</td>
+                        <td>integer</td>
+                        <td>ID отрасли</td>
+                    </tr>
+
+                    <tr>
+                        <td>edu_list</td>
+                        <td>array</td>
+                        <td>Список: Образование</td>
+                    </tr>
+
+                    <tr>
+                        <td>level</td>
+                        <td>integer</td>
+                        <td>Уровень образования</td>
+                    </tr>
+
+                    <tr>
+                        <td>institution</td>
+                        <td>string</td>
+                        <td>Учебное заведение</td>
+                    </tr>
+
+                    <tr>
+                        <td>faculty</td>
+                        <td>string</td>
+                        <td>Факультет</td>
+                    </tr>
+
+                    <tr>
+                        <td>specialization</td>
+                        <td>string</td>
+                        <td>Специальность</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>edu_years_from</td>
+                        <td>integer</td>
+                        <td>Годы обучения от</td>
+                    </tr>
+
+                    <tr>
+                        <td>edu_years_to</td>
+                        <td>integer</td>
+                        <td>Годы обучения до</td>
+                    </tr>
+
+                    <tr>
+                        <td>exp_list</td>
+                        <td>array</td>
+                        <td>Список: Опыт работы</td>
+                    </tr>
+
+                    <tr>
+                        <td>organization</td>
+                        <td>string</td>
+                        <td>Организация</td>
+                    </tr>
+
+                    <tr>
+                        <td>exp_mode</td>
+                        <td>integer</td>
+                        <td>Самозанятый, ИП ...</td>
+                    </tr>
+
+                    <tr>
+                        <td>post</td>
+                        <td>string</td>
+                        <td>Должность</td>
+                    </tr>
+
+                    <tr>
+                        <td>duties</td>
+                        <td>string</td>
+                        <td>Обязанности</td>
+                    </tr>
+
+                    <tr>
+                        <td>exp_years_from</td>
+                        <td>integer</td>
+                        <td>Годы работы от</td>
+                    </tr>
+
+                    <tr>
+                        <td>exp_years_to</td>
+                        <td>integer</td>
+                        <td>Годы работы до</td>
+                    </tr>
+
+                    <tr>
+                        <td>now</td>
+                        <td>integer</td>
+                        <td>По настоящее время</td>
+                    </tr>
+
+                    <tr>
+                        <td>password</td>
+                        <td>string</td>
+                        <td>Пароль</td>
+                    </tr>
+
+                    <tr>
+                        <td>password_confirmation</td>
+                        <td>string</td>
+                        <td>Подтверждение пароля</td>
+                    </tr>
+
+                    <tr>
+                        <td>img</td>
+                        <td>file</td>
+                        <td>Изображение профиля</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
